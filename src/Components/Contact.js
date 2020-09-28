@@ -1,6 +1,62 @@
 import React, { Component } from "react";
+import * as yup from "yup";
 
 class Contact extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      contactName: "",
+      contactEmail: "",
+      contactSubject: "",
+      contactMessage: "",
+      num1: Math.floor(Math.random() * 10),
+      num2: Math.floor(Math.random() * 10),
+      sumAdd: 0,
+    };
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.contactSchema = yup.object().shape({
+      contactName: yup.string().required("Champ obligatoire"),
+      contactEmail: yup
+        .string()
+        .email("Format email non reconnu")
+        .required("Champ obligatoire"),
+      contactSubject: yup.string(),
+      contactMessage: yup.string().required("Champ obligatoire"),
+      sumAdd: yup
+        .number()
+        .oneOf([this.state.num1 + this.state.num2])
+        .required(),
+    });
+  }
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+    this.contactSchema
+      .validate(this.state)
+      .then(
+        (onFulfilled) => {
+          if (onFulfilled.contactSubject.length === 0) {
+            onFulfilled.contactSubject = "Un message venant du site Porfolio";
+          }
+          console.log(onFulfilled);
+        },
+        (onRejected) => {
+          alert(
+            `Le message n'a pas pu être envoyé :
+${onRejected.path} => ${onRejected.errors}`
+          );
+          console.log(onRejected);
+        }
+      )
+      .catch((error) => {
+        console.error(error.message);
+      });
+  };
+  handleChange(event) {
+    this.setState({ [event.target.name]: event.target.value });
+  }
+
   render() {
     if (this.props.data) {
       var name = this.props.data.name;
@@ -27,7 +83,13 @@ class Contact extends Component {
 
         <div className="row">
           <div className="eight columns">
-            <form action="" method="post" id="contactForm" name="contactForm">
+            <form
+              action=""
+              method="post"
+              id="contactForm"
+              name="contactForm"
+              onSubmit={this.handleSubmit}
+            >
               <fieldset>
                 <div>
                   <label htmlFor="contactName">
@@ -40,6 +102,8 @@ class Contact extends Component {
                     id="contactName"
                     name="contactName"
                     onChange={this.handleChange}
+                    value={this.state.contactName}
+                    required
                   />
                 </div>
 
@@ -54,6 +118,8 @@ class Contact extends Component {
                     id="contactEmail"
                     name="contactEmail"
                     onChange={this.handleChange}
+                    value={this.state.contactEmail}
+                    required
                   />
                 </div>
 
@@ -66,6 +132,7 @@ class Contact extends Component {
                     id="contactSubject"
                     name="contactSubject"
                     onChange={this.handleChange}
+                    value={this.state.contactSubject}
                   />
                 </div>
 
@@ -78,7 +145,25 @@ class Contact extends Component {
                     rows="15"
                     id="contactMessage"
                     name="contactMessage"
+                    onChange={this.handleChange}
+                    value={this.state.contactMessage}
+                    required
                   ></textarea>
+                </div>
+
+                <div>
+                  <label htmlFor="sumAdd">
+                    {this.state.num1} + {this.state.num2} ?
+                  </label>
+                  <input
+                    type="text"
+                    defaultValue=""
+                    size="2"
+                    id="sumAdd"
+                    name="sumAdd"
+                    onChange={this.handleChange}
+                    value={this.state.sumAdd}
+                  />
                 </div>
 
                 <div>
