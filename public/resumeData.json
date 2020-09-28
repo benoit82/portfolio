@@ -7,13 +7,13 @@
     "contactmessage": "Mon profile vous intéresse ? Contactez-moi 🙂",
     "email": "benoit.dubus@outlook.fr",
     "phone": "+33 (0)6.19.67.65.99",
+    "linkedin": "https://www.linkedin.com/in/beno%C3%AEt-dubus-489ab3153/",
     "github": "https://github.com/benoit82",
     "address": {
       "city": "Toulouse",
       "zip": "31000"
     },
-    "website": "http://www.timbakerdev.com",
-    "resumedownload": "http://timbakerdev.com",
+    "resumedownload": "https://drive.google.com/file/d/117z6vdKLL1YCYjPhtW4gLv1qJQnAXI3U/view?usp=sharing",
     "social": [
       {
         "name": "linkedin",
@@ -111,10 +111,16 @@
   "portfolio": {
     "projects": [
       {
-        "title": "Canadian Wanderlust",
-        "category": "My Travel Blog for my post-university travels",
-        "image": "canadian-wanderlust.jpg",
-        "url": "https://www.canadianwanderlust.com"
+        "title": "FFXIV Roster Helper",
+        "category": "Gestionnaire de groupe (butin, équipement) pour communauté sur le jeu en ligne Final Fantasy XIV. Site fait en ReactJS v16.",
+        "image": "ffxiv_roster_helper.png",
+        "url": "https://ffxivrosterhelper.web.app/"
+      },
+      {
+        "title": "BelettusBot",
+        "category": "Bot pour planifier et gérer des sorties/évènements entre amis pour les utilisateurs du logiciel Discord. Bot réalisé en NodeJS. (commande bb!help pour commencer l'utilisation)",
+        "image": "belettusBot.png",
+        "url": "https://discord.com/api/oauth2/authorize?client_id=748585400083152966&permissions=1010896&scope=bot"
       }
     ]
   }

@@ -28,7 +28,10 @@ class Portfolio extends Component {
       <section id="portfolio">
         <div className="row">
           <div className="twelve columns collapsed">
-            <h1>Voici quelques unes de mes réalisations.</h1>
+            <h1>
+              Voici quelques unes de mes réalisations - projets personnels
+              disponible en ligne.
+            </h1>
 
             <div
               id="portfolio-wrapper"

@@ -5,6 +5,7 @@ class Header extends Component {
   render() {
     if (this.props.data) {
       var github = this.props.data.github;
+      var linkedin = this.props.data.linkedin;
       var name = this.props.data.name;
       var description = this.props.data.description;
     }
@@ -32,13 +33,13 @@ class Header extends Component {
               </a>
             </li>
             <li>
-              <a className="smoothscroll" href="#resume">
-                Parcours
+              <a className="smoothscroll" href="#portfolio">
+                Portfolio
               </a>
             </li>
             <li>
-              <a className="smoothscroll" href="#portfolio">
-                Portfolio
+              <a className="smoothscroll" href="#resume">
+                Parcours
               </a>
             </li>
             <li>
@@ -55,7 +56,18 @@ class Header extends Component {
             <h3>{description}.</h3>
             <hr />
             <ul className="social">
-              <a href={github} className="button btn github-btn">
+              <a
+                href={linkedin}
+                className="button btn linkedin-btn"
+                target="_blanck"
+              >
+                <i className="fa fa-linkedin"></i>Linkedin
+              </a>
+              <a
+                href={github}
+                className="button btn github-btn"
+                target="_blanck"
+              >
                 <i className="fa fa-github"></i>Github
               </a>
             </ul>
