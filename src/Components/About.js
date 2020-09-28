@@ -6,9 +6,7 @@ class About extends Component {
       var name = this.props.data.name;
       var profilepic = "images/" + this.props.data.image;
       var bio = this.props.data.bio;
-      var street = this.props.data.address.street;
       var city = this.props.data.address.city;
-      var state = this.props.data.address.state;
       var zip = this.props.data.address.zip;
       var phone = this.props.data.phone;
       var email = this.props.data.email;
@@ -31,14 +29,12 @@ class About extends Component {
             <p>{bio}</p>
             <div className="row">
               <div className="columns contact-details">
-                <h2>Contact Details</h2>
+                <h2>Pour me contacter</h2>
                 <p className="address">
                   <span>{name}</span>
                   <br />
                   <span>
-                    {street}
-                    <br />
-                    {city} {state}, {zip}
+                    {zip} {city}
                   </span>
                   <br />
                   <span>{phone}</span>
@@ -49,7 +45,7 @@ class About extends Component {
               <div className="columns download">
                 <p>
                   <a href={resumeDownload} className="button">
-                    <i className="fa fa-download"></i>Download Resume
+                    <i className="fa fa-download"></i>Télécharger mon CV
                   </a>
                 </p>
               </div>

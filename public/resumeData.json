@@ -4,14 +4,12 @@
     "description": "Bonjour et bienvenue sur mon portfolio. Je suis développeur web. Vous trouverez sur cette page toutes les informations me concernant",
     "image": "avatar_ihre_viera_by_alexia.png",
     "bio": "J'ai toujours été passionné par l'informatique et internet. C'est pourquoi, j'ai choisi ce domaine pour exercer le métier de développeur web. Je cherche principalement des missions utilisant les technologies de ReactJS et NodeJS, mais je reste à l'écoute des opportunités en langage Java et PHP également.",
-    "contactmessage": "N'hésitez pas à me contacter, je vous répondrai dès que possible.",
+    "contactmessage": "Mon profile vous intéresse ? Contactez-moi 🙂",
     "email": "benoit.dubus@outlook.fr",
-    "phone": "(+33) 06.19.67.65.99",
+    "phone": "+33 (0)6.19.67.65.99",
     "github": "https://github.com/benoit82",
     "address": {
-      "street": "Rue de la concorde",
       "city": "Toulouse",
-      "state": "Haute Garonne",
       "zip": "31000"
     },
     "website": "http://www.timbakerdev.com",
@@ -30,27 +28,51 @@
     ]
   },
   "resume": {
-    "skillmessage": "Liste de mes compétences",
+    "skillmessage": "Liste de mes compétences en développement",
     "education": [
       {
-        "school": "University?",
-        "degree": "Masters in Beer tasting",
-        "graduated": "April 2007",
-        "description": "Describe your experience at school, what you learned, what useful skills you have acquired etc."
+        "school": "Veille technologique en autodidacte",
+        "diploma": "",
+        "years": "Depuis 2012 et encore aujourd'hui",
+        "description": "Apprentissage de programmation sur divers plateforme en ligne (OpenClassRoom, Grafikart...) sur les technologies suivantes : NodeJS, ReactJS, PHP Symfony, NoSQL. Je prévois de m'interesser à VueJS une fois la v3 sortie."
+      },
+      {
+        "school": "LDNR - Formation Java EE - Labège",
+        "diploma": "Renforcement de compétence",
+        "years": "2018",
+        "description": "Renforcement de compétence en java EE, méthode UML"
+      },
+      {
+        "school": "Next Formation - Vincenne",
+        "diploma": "Concepteur Développeur Informatique",
+        "years": "2012",
+        "description": "Diplôme obtenu de Concepteur Développeur Informatique, diplôme d'état de niveau II (équivalent d'un Bac +4). Apprentissage de HTML, CSS, Javascript, PHP et Java SE/EE."
       }
     ],
     "work": [
       {
-        "company": "Awesome Design Studio",
-        "title": "Senior UX God ",
-        "years": "March 2010 - Present",
-        "description": "Describe work, special projects, notable achievements, what technologies you have been working with, and anything else that would be useful for an employer to know."
+        "company": "Koncept (ESN) - Sopra Steria (Colomier)",
+        "title": "Analyste programmeur",
+        "years": "2018-2019",
+        "description": "Maintenance applicative pour une application Airbus (gestionnaire de formulaires de satisfaction client) en Java EE 6, SGBD Oracle. Gestion d'incident sur une application en version 11, mise à jour et développement de fonctionnalités. Développement de microservices en NodeJS et implémentation sur application Angular 8. Formation en entreprise de la méthode Agile SCRUM et Angular."
+      },
+      {
+        "company": "Le Groupe de l'Hotellerie",
+        "title": "Réceptionniste",
+        "years": "2008-2017",
+        "description": "Réceptionniste tournant sur plusieurs hôtels 3 et 4 étoiles du groupe aux alentours et dans Paris, travail de jour et de nuit, selon les besoins de l'employeur."
+      },
+      {
+        "company": "Action Prévoyance (Fontenay-sous-bois)",
+        "title": "Concepteur Développeur web",
+        "years": "été 2012",
+        "description": "Création et réalisation d'un premier site vitrine pour un auto-entrepreneur en PHP avec le framework Zend, SGBD MySQL."
       }
     ],
     "skills": [
       {
         "name": "Javascript - Typescript",
-        "level": "85%"
+        "level": "90%"
       },
       {
         "name": "ReactJs",
@@ -61,8 +83,8 @@
         "level": "55%"
       },
       {
-        "name": "HTML - CSS",
-        "level": "85%"
+        "name": "HTML - CSS - SASS",
+        "level": "75%"
       },
       {
         "name": "PHP",

@@ -4,12 +4,10 @@ class Contact extends Component {
   render() {
     if (this.props.data) {
       var name = this.props.data.name;
-      var street = this.props.data.address.street;
+      var email = this.props.data.email;
       var city = this.props.data.address.city;
-      var state = this.props.data.address.state;
       var zip = this.props.data.address.zip;
       var phone = this.props.data.phone;
-      var email = this.props.data.email;
       var message = this.props.data.contactmessage;
     }
 
@@ -33,7 +31,7 @@ class Contact extends Component {
               <fieldset>
                 <div>
                   <label htmlFor="contactName">
-                    Name <span className="required">*</span>
+                    Nom <span className="required">*</span>
                   </label>
                   <input
                     type="text"
@@ -60,7 +58,7 @@ class Contact extends Component {
                 </div>
 
                 <div>
-                  <label htmlFor="contactSubject">Subject</label>
+                  <label htmlFor="contactSubject">Sujet</label>
                   <input
                     type="text"
                     defaultValue=""
@@ -84,7 +82,7 @@ class Contact extends Component {
                 </div>
 
                 <div>
-                  <button className="submit">Submit</button>
+                  <button className="submit">Envoyer</button>
                   <span id="image-loader">
                     <img alt="" src="images/loader.gif" />
                   </span>
@@ -92,23 +90,24 @@ class Contact extends Component {
               </fieldset>
             </form>
 
-            <div id="message-warning"> Error boy</div>
+            <div id="message-warning"> Erreur d'envoi</div>
             <div id="message-success">
-              <i className="fa fa-check"></i>Your message was sent, thank you!
+              <i className="fa fa-check"></i>Votre message a été envoyé, merci !
               <br />
             </div>
           </div>
 
           <aside className="four columns footer-widgets">
             <div className="widget widget_contact">
-              <h4>Address and Phone</h4>
+              <h4>Pour me joindre</h4>
               <p className="address">
                 {name}
                 <br />
-                {street} <br />
-                {city}, {state} {zip}
+                {zip} {city}
                 <br />
                 <span>{phone}</span>
+                <br />
+                <span>{email}</span>
               </p>
             </div>
           </aside>
