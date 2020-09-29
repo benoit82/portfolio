@@ -9,26 +9,40 @@ class Contact extends Component {
       contactEmail: "",
       contactSubject: "",
       contactMessage: "",
-      num1: Math.floor(Math.random() * 10),
-      num2: Math.floor(Math.random() * 10),
+      num1: Math.floor(Math.random() * 9 + 1),
+      num2: Math.floor(Math.random() * 9 + 1),
       sumAdd: 0,
+      errors: {},
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleBlur = this.handleBlur.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.contactSchema = yup.object().shape({
-      contactName: yup.string().required("Champ obligatoire"),
+      contactName: yup.string().required("Champ obligatoire."),
       contactEmail: yup
         .string()
-        .email("Format email non reconnu")
-        .required("Champ obligatoire"),
+        .email("Format email non reconnu.")
+        .required("Champ obligatoire."),
       contactSubject: yup.string(),
-      contactMessage: yup.string().required("Champ obligatoire"),
+      contactMessage: yup.string().required("Champ obligatoire."),
       sumAdd: yup
         .number()
         .oneOf([this.state.num1 + this.state.num2])
         .required(),
     });
   }
+
+  handleYupErrors = (onRejected) => {
+    if (onRejected.inner && onRejected.inner.length > 0) {
+      let errors = {};
+      onRejected.inner.forEach((obj) => {
+        if (obj.path === "sumAdd")
+          obj.errors = ["Ce n'est pas la réponse attendue."];
+        errors = { ...errors, [obj.path]: obj.errors };
+      });
+      this.setState({ errors });
+    }
+  };
 
   handleSubmit = (event) => {
     event.preventDefault();
@@ -39,23 +53,63 @@ class Contact extends Component {
           if (onFulfilled.contactSubject.length === 0) {
             onFulfilled.contactSubject = "Un message venant du site Porfolio";
           }
-          console.log(onFulfilled);
+
+          // envoie du mail
+          console.log("envoyé : ", {
+            contactName: onFulfilled.contactSubject,
+            contactEmail: onFulfilled.contactEmail,
+            contactSubject: onFulfilled.contactSubject,
+            contactMessage: onFulfilled.contactMessage,
+          });
+          this.setState({
+            contactName: "",
+            contactEmail: "",
+            contactSubject: "",
+            contactMessage: "",
+            num1: Math.floor(Math.random() * 9 + 1),
+            num2: Math.floor(Math.random() * 9 + 1),
+            sumAdd: 0,
+            errors: {},
+          });
         },
         (onRejected) => {
-          alert(
-            `Le message n'a pas pu être envoyé :
-${onRejected.path} => ${onRejected.errors}`
-          );
-          console.log(onRejected);
+          this.handleYupErrors(onRejected);
         }
       )
       .catch((error) => {
         console.error(error.message);
       });
   };
+
   handleChange(event) {
     this.setState({ [event.target.name]: event.target.value });
   }
+
+  handleBlur(event) {
+    this.contactSchema
+      .validate(this.state, { abortEarly: false })
+      .then(
+        (onFulfilled) => {
+          this.setState({ errors: {} });
+        },
+        (onRejected) => {
+          this.handleYupErrors(onRejected);
+        }
+      )
+      .catch((error) => {
+        console.error(error.message);
+      });
+  }
+
+  showError = (prop) => {
+    return this.state.errors[prop]
+      ? this.state.errors[prop].map((err, index) => (
+          <span className="showError" key={index}>
+            {err}
+          </span>
+        ))
+      : "";
+  };
 
   render() {
     if (this.props.data) {
@@ -97,14 +151,15 @@ ${onRejected.path} => ${onRejected.errors}`
                   </label>
                   <input
                     type="text"
-                    defaultValue=""
                     size="35"
                     id="contactName"
                     name="contactName"
                     onChange={this.handleChange}
+                    onBlur={this.handleBlur}
                     value={this.state.contactName}
                     required
                   />
+                  {this.showError("contactName")}
                 </div>
 
                 <div>
@@ -113,27 +168,29 @@ ${onRejected.path} => ${onRejected.errors}`
                   </label>
                   <input
                     type="text"
-                    defaultValue=""
                     size="35"
                     id="contactEmail"
                     name="contactEmail"
                     onChange={this.handleChange}
+                    onBlur={this.handleBlur}
                     value={this.state.contactEmail}
                     required
                   />
+                  {this.showError("contactEmail")}
                 </div>
 
                 <div>
                   <label htmlFor="contactSubject">Sujet</label>
                   <input
                     type="text"
-                    defaultValue=""
                     size="35"
                     id="contactSubject"
                     name="contactSubject"
                     onChange={this.handleChange}
+                    onBlur={this.handleBlur}
                     value={this.state.contactSubject}
                   />
+                  {this.showError("contactSubject")}
                 </div>
 
                 <div>
@@ -146,9 +203,11 @@ ${onRejected.path} => ${onRejected.errors}`
                     id="contactMessage"
                     name="contactMessage"
                     onChange={this.handleChange}
+                    onBlur={this.handleBlur}
                     value={this.state.contactMessage}
                     required
                   ></textarea>
+                  {this.showError("contactMessage")}
                 </div>
 
                 <div>
@@ -157,13 +216,14 @@ ${onRejected.path} => ${onRejected.errors}`
                   </label>
                   <input
                     type="text"
-                    defaultValue=""
                     size="2"
                     id="sumAdd"
                     name="sumAdd"
                     onChange={this.handleChange}
-                    value={this.state.sumAdd}
+                    onBlur={this.handleBlur}
+                    value={this.state.sumAdd === 0 ? "" : this.state.sumAdd}
                   />
+                  {this.showError("sumAdd")}
                 </div>
 
                 <div>
