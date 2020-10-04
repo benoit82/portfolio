@@ -1,7 +1,35 @@
 import React, { Component } from "react";
 import ParticlesBg from "particles-bg";
+import { TimelineLite } from "gsap";
 
 class Header extends Component {
+  constructor(props) {
+    super(props);
+    this.myElements = [];
+  }
+
+  componentDidMount() {
+    const tl = new TimelineLite();
+    tl.from(".banner-text", {
+      y: -400,
+      duration: 1,
+      opacity: 0,
+    })
+      .from(
+        ".social",
+        {
+          duration: 1,
+          delay: 0.3,
+          opacity: 0,
+        },
+        "-=0.25"
+      )
+      .from(".banner-text h3", {
+        duration: 1,
+        opacity: 0,
+      });
+  }
+
   render() {
     if (this.props.data) {
       var github = this.props.data.github;
@@ -42,31 +70,36 @@ class Header extends Component {
                 Parcours
               </a>
             </li>
-            <li>
+            {/*             <li>
               <a className="smoothscroll" href="#contact">
                 Contact
               </a>
-            </li>
+            </li> */}
           </ul>
         </nav>
 
         <div className="row banner">
           <div className="banner-text">
-            <h1 className="responsive-headline">{name}</h1>
-            <h3>{description}.</h3>
+            <h1
+              className="responsive-headline"
+              ref={(el) => this.myElements.push(el)}
+            >
+              {name}
+            </h1>
+            <h3>{description}</h3>
             <hr />
             <ul className="social">
               <a
                 href={linkedin}
                 className="button btn linkedin-btn"
-                target="_blanck"
+                target="_blank"
               >
                 <i className="fa fa-linkedin"></i>Linkedin
               </a>
               <a
                 href={github}
                 className="button btn github-btn"
-                target="_blanck"
+                target="_blank"
               >
                 <i className="fa fa-github"></i>Github
               </a>

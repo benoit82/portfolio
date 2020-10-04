@@ -1,8 +1,8 @@
 {
   "main": {
     "name": "Benoît Dubus",
-    "description": "Bonjour et bienvenue sur mon portfolio. Je suis développeur web. Vous trouverez sur cette page toutes les informations me concernant",
-    "image": "avatar_ihre_viera_by_alexia.png",
+    "description": "Bonjour et bienvenue sur mon site portfolio. Je suis développeur web. Vous trouverez sur cette page toutes les informations me concernant.",
+    "image": "benoit_dubus_2020_profil_small.jpg",
     "bio": "J'ai toujours été passionné par l'informatique et internet. C'est pourquoi, j'ai choisi ce domaine pour exercer le métier de développeur web. Je cherche principalement des missions utilisant les technologies de ReactJS et NodeJS, mais je reste à l'écoute des opportunités en langage Java et PHP également.",
     "contactmessage": "Mon profile vous intéresse ? Contactez-moi 🙂",
     "email": "benoit.dubus@outlook.fr",
@@ -13,7 +13,7 @@
       "city": "Toulouse",
       "zip": "31000"
     },
-    "resumedownload": "https://drive.google.com/file/d/117z6vdKLL1YCYjPhtW4gLv1qJQnAXI3U/view?usp=sharing",
+    "resumedownload": "https://cvdesignr.com/p/5b04b3eb887fa",
     "social": [
       {
         "name": "linkedin",
@@ -34,7 +34,7 @@
         "school": "Veille technologique en autodidacte",
         "diploma": "",
         "years": "Depuis 2012 et encore aujourd'hui",
-        "description": "Apprentissage de programmation sur divers plateforme en ligne (OpenClassRoom, Grafikart...) sur les technologies suivantes : NodeJS, ReactJS, PHP Symfony, NoSQL. Je prévois de m'interesser à VueJS une fois la v3 sortie."
+        "description": "Apprentissage de programmation sur divers plateformes en ligne : NodeJS, ReactJS, PHP Symfony, NoSQL. Je prévois de m'interesser à VueJS une fois la v3 sortie."
       },
       {
         "school": "LDNR - Formation Java EE - Labège",
