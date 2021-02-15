@@ -18,5 +18,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "@testing-library/dom": "^7.24.5",
+    "@testing-library/react": "^11.0.4"
   }
 }
