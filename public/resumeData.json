@@ -129,10 +129,10 @@
         "url": "https://bdcapturecam.netlify.app/"
       },
       {
-        "title": "Capture camera",
-        "category": "Un autre mini projet sur un site statique en HTML5/CSS3/JS vanilla, site fictif de co-voiturage. Future développement en ReactJS ou VueJS.",
+        "title": "En route !",
+        "category": "Un autre mini projet sur un site statique en HTML5/CSS3/JS vanilla, site fictif de co-voiturage. Maquettage et design sur Figma. Future développement en ReactJS ou VueJS.",
         "image": "en_route_acc.png",
-        "url": "https://bdcapturecam.netlify.app/"
+        "url": "https://bdenroute.netlify.app/"
       },
       {
         "title": "BelettusBot",
