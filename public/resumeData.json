@@ -135,7 +135,7 @@
         "url": "https://bdenroute.netlify.app/"
       },
       {
-        "title": "BelettusBot",
+        "title": "PaïssaBot",
         "category": "Bot pour planifier et gérer des sorties/évènements entre amis pour les utilisateurs du logiciel Discord. Bot réalisé en NodeJS. (commande bb!help pour commencer l'utilisation)",
         "image": "belettusBot.png",
         "url": "https://discord.com/api/oauth2/authorize?client_id=748585400083152966&permissions=1010896&scope=bot"
