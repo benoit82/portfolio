@@ -117,6 +117,24 @@
         "url": "https://ffxivrosterhelper.web.app/"
       },
       {
+        "title": "Site portfolio",
+        "category": "Vous êtes ici 😃",
+        "image": "site_portfolio.png",
+        "url": "https://benoit-dubus.web.app/"
+      },
+      {
+        "title": "Capture camera",
+        "category": "Mini projet sur un site statique en HTML5/CSS3/JS vanilla pour prendre une photo avec sa webcam.",
+        "image": "capture_cam.png",
+        "url": "https://bdcapturecam.netlify.app/"
+      },
+      {
+        "title": "Capture camera",
+        "category": "Un autre mini projet sur un site statique en HTML5/CSS3/JS vanilla, site fictif de co-voiturage. Future développement en ReactJS ou VueJS.",
+        "image": "en_route_acc.png",
+        "url": "https://bdcapturecam.netlify.app/"
+      },
+      {
         "title": "BelettusBot",
         "category": "Bot pour planifier et gérer des sorties/évènements entre amis pour les utilisateurs du logiciel Discord. Bot réalisé en NodeJS. (commande bb!help pour commencer l'utilisation)",
         "image": "belettusBot.png",
